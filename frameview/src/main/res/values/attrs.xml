@@ -2,6 +2,6 @@
 <resources>
     <declare-styleable name="FrameView">
         <attr name="frameView_shape" format="string"/>
-        <attr name="frameView_background" format="color"/>
+        <attr name="frameView_strokeColor" format="color"/>
     </declare-styleable>
 </resources>
