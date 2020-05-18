@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FrameView">
+        <attr name="frameView_shape" format="string"/>
+        <attr name="frameView_background" format="color"/>
+    </declare-styleable>
+</resources>
