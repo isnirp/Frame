@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="FrameView">
+    <declare-styleable name="FrameImageView">
         <attr name="frameView_shape" format="string"/>
         <attr name="frameView_strokeColor" format="color"/>
     </declare-styleable>

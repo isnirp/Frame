@@ -5,8 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.util.AttributeSet;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,26 +14,26 @@ import androidx.annotation.Nullable;
  *
  * @author Prince
  * */
-public class FrameView extends RelativeLayout {
+public class FrameImageView extends RelativeLayout {
     private String frameView_shape;
     private int frameView_stroke_color;
 
     // used programmatically
-    public FrameView(@NonNull Context context) {
+    public FrameImageView(@NonNull Context context) {
         super(context);
     }
 
     // used in xml layout
-    public FrameView(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public FrameImageView(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         initAttributes(context, attrs);
     }
 
     private void initAttributes(Context context, AttributeSet attrs) {
         // Obtain a typed array of attributes
-        TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.FrameView, 0, 0);
-        frameView_shape = a.getString(R.styleable.FrameView_frameView_shape);
-        frameView_stroke_color = a.getColor(R.styleable.FrameView_frameView_strokeColor, Color.BLACK);
+        TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.FrameImageView, 0, 0);
+        frameView_shape = a.getString(R.styleable.FrameImageView_frameView_shape);
+        frameView_stroke_color = a.getColor(R.styleable.FrameImageView_frameView_strokeColor, Color.BLACK);
 
         a.recycle();
     }
