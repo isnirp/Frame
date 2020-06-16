@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,7 +15,7 @@ import androidx.annotation.Nullable;
  *
  * @author Prince
  * */
-public class FrameView extends FrameLayout {
+public class FrameView extends RelativeLayout {
     private String frameView_shape;
     private int frameView_stroke_color;
 
@@ -38,9 +39,14 @@ public class FrameView extends FrameLayout {
         a.recycle();
     }
 
+    /* control view dimension*/
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        final int width = getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec);
+        final int height = getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec);
+
+        setMeasuredDimension(width, height);
+        //super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
     @Override
