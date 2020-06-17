@@ -3,5 +3,6 @@
     <declare-styleable name="FrameImageView">
         <attr name="frameView_shape" format="string"/>
         <attr name="frameView_strokeColor" format="color"/>
+        <attr name="frameView_src" format="reference"/>
     </declare-styleable>
 </resources>
