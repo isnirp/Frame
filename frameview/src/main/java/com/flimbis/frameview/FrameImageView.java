@@ -40,6 +40,8 @@ public class FrameImageView extends RelativeLayout {
         strokeColor = a.getColor(R.styleable.FrameImageView_frameView_strokeColor, Color.BLACK);
         imageSrc = a.getDrawable(R.styleable.FrameImageView_frameView_src);
 
+        imageView = findViewById(R.id.img_src);
+
         a.recycle();
     }
 
