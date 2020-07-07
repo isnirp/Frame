@@ -34,31 +34,35 @@ public class FrameImageView extends RelativeLayout {
     }
 
     private void initAttributes(Context context, AttributeSet attrs) {
+        inflate(context, R.layout.frame_image_view_layout, this);
+        imageView = findViewById(R.id.img_src);
+
         // Obtain a typed array of attributes
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.FrameImageView, 0, 0);
         viewShape = a.getString(R.styleable.FrameImageView_frameView_shape);
         strokeColor = a.getColor(R.styleable.FrameImageView_frameView_strokeColor, Color.BLACK);
         imageSrc = a.getDrawable(R.styleable.FrameImageView_frameView_src);
 
-        imageView = findViewById(R.id.img_src);
+        if (null != imageSrc)
+            setImageDrawable(imageSrc);
 
         a.recycle();
     }
 
     /* control view dimension*/
-    @Override
+   /* @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         final int width = getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec);
         final int height = getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec);
 
         setMeasuredDimension(width, height);
         //super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-    }
+    }*/
 
-    @Override
+    /*@Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-    }
+    }*/
 
     public void setImageDrawable(Drawable imageSrc) {
         imageView.setImageDrawable(imageSrc);
