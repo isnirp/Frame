@@ -91,7 +91,7 @@ public class FrameImageView extends RelativeLayout {
                 this.setBackground(ContextCompat.getDrawable(context, R.drawable.frameview_bkgrnd_circle));
                 break;
             case 2/*triangle*/:
-                this.setBackground(ContextCompat.getDrawable(context, R.drawable.frameview_bkgrnd_circle));
+                shapeCircle(shapeDrawable);
                 break;
             default/*circle*/:
                 shapeCircle(shapeDrawable);
