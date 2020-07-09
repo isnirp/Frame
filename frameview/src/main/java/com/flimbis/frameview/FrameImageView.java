@@ -49,18 +49,21 @@ public class FrameImageView extends RelativeLayout {
 
         // defaults
         int bkgrdColor = ContextCompat.getColor(context, R.color.defaultBkgrnd);
+        int strkeColor = ContextCompat.getColor(context, R.color.defaultStroke);
 
         // Obtain a typed array of attributes
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.FrameImageView, 0, 0);
         viewShape = a.getInteger(R.styleable.FrameImageView_frameView_shape, 0);
         backgroundColor = a.getColor(R.styleable.FrameImageView_frameView_backgroundColor, bkgrdColor);
-        strokeColor = a.getColor(R.styleable.FrameImageView_frameView_strokeColor, Color.BLACK);
+        strokeColor = a.getColor(R.styleable.FrameImageView_frameView_strokeColor, strkeColor);
         imageSrc = a.getDrawable(R.styleable.FrameImageView_frameView_src);
 
         // set shape
         setViewShape(viewShape);
         // background or solid
         setBackgroundColor(backgroundColor);
+        // stroke color
+        setStrokeColor(strokeColor);
         // default padding
         this.setPadding(10, 15, 10, 15);
 
@@ -100,6 +103,10 @@ public class FrameImageView extends RelativeLayout {
 
     public void setBackgroundColor(int color) {
         shapeDrawable.setColor(color);
+    }
+
+    public void setStrokeColor(int color){
+        shapeDrawable.setStroke(1, color);
     }
 
     private void shapeCircle(GradientDrawable gd) {
