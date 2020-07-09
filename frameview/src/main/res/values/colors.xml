@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="defaultPrimary">#ffd454</color>
-    <color name="defaultBkgrnd">#cccccc</color>
+    <color name="defaultBkgrnd">#e8e8e8</color>
+<!--    <color name="defaultBkgrnd">#cccccc</color>-->
 </resources>

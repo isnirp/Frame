@@ -2,10 +2,9 @@ package com.flimbis.frameview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
+import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -23,6 +22,11 @@ public class FrameImageView extends RelativeLayout {
     private int strokeColor;
     private int backgroundColor;
     private Drawable imageSrc;
+    /*
+     * GradientDrawable, A Drawable with a color gradient for buttons, backgrounds.
+     * It can be defined in an XML file with the <shape> element
+     * */
+    private GradientDrawable shapeDrawable;
     private ImageView imageView;
     private Context context;
 
@@ -54,7 +58,9 @@ public class FrameImageView extends RelativeLayout {
         imageSrc = a.getDrawable(R.styleable.FrameImageView_frameView_src);
 
         // set shape
-        setViewShape(1);
+        setViewShape(viewShape);
+        // background or solid
+        setBackgroundColor(backgroundColor);
         // default padding
         this.setPadding(10, 15, 10, 15);
 
@@ -74,6 +80,9 @@ public class FrameImageView extends RelativeLayout {
             this.setBackground(ContextCompat.getDrawable(context, R.drawable.frameview_bkgrnd_circle));
         else
             this.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.frameview_bkgrnd_circle));*/
+
+        //GradientDrawable gd = (GradientDrawable) this.getBackground();
+        shapeDrawable = new GradientDrawable();
         switch (shape) {
             case 1/*square*/:
                 this.setBackground(ContextCompat.getDrawable(context, R.drawable.frameview_bkgrnd_circle));
@@ -82,9 +91,19 @@ public class FrameImageView extends RelativeLayout {
                 this.setBackground(ContextCompat.getDrawable(context, R.drawable.frameview_bkgrnd_circle));
                 break;
             default/*circle*/:
-                this.setBackground(ContextCompat.getDrawable(context, R.drawable.frameview_bkgrnd_circle));
+                shapeCircle(shapeDrawable);
+                //this.setBackground(ContextCompat.getDrawable(context, R.drawable.frameview_bkgrnd_circle));
                 break;
         }
 
+    }
+
+    public void setBackgroundColor(int color) {
+        shapeDrawable.setColor(color);
+    }
+
+    private void shapeCircle(GradientDrawable gd) {
+        gd.setShape(GradientDrawable.OVAL);
+        this.setBackground(gd);
     }
 }
