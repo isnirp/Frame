@@ -21,6 +21,7 @@ import androidx.core.content.ContextCompat;
 public class FrameImageView extends RelativeLayout {
     private int viewShape;
     private int strokeColor;
+    private int backgroundColor;
     private Drawable imageSrc;
     private ImageView imageView;
     private Context context;
@@ -45,6 +46,7 @@ public class FrameImageView extends RelativeLayout {
         // Obtain a typed array of attributes
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.FrameImageView, 0, 0);
         viewShape = a.getInteger(R.styleable.FrameImageView_frameView_shape, 0);
+        backgroundColor = a.getColor(R.styleable.FrameImageView_frameView_backgroundColor, Color.BLACK);
         strokeColor = a.getColor(R.styleable.FrameImageView_frameView_strokeColor, Color.BLACK);
         imageSrc = a.getDrawable(R.styleable.FrameImageView_frameView_src);
 

@@ -7,6 +7,7 @@
             <enum name="triangle" value="2"/>
         </attr>
         <attr name="frameView_strokeColor" format="color"/>
+        <attr name="frameView_backgroundColor" format="color"/>
         <attr name="frameView_src" format="reference"/>
     </declare-styleable>
 </resources>
