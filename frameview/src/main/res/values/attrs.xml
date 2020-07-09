@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="FrameImageView">
-        <attr name="frameView_shape" format="string"/>
+        <attr name="frameView_shape" format="enum">
+            <enum name="circle" value="0"/>
+            <enum name="square" value="1"/>
+            <enum name="triangle" value="2"/>
+        </attr>
         <attr name="frameView_strokeColor" format="color"/>
         <attr name="frameView_src" format="reference"/>
     </declare-styleable>

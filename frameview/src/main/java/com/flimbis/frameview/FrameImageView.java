@@ -65,9 +65,21 @@ public class FrameImageView extends RelativeLayout {
 
     public void setViewShape(int shape) {
         //this.setBackgroundColor(getResources().getColor(R.color.defaultPrimary));
-        if (Build.VERSION.SDK_INT >= 16)
+        /*if (Build.VERSION.SDK_INT >= 16)
             this.setBackground(ContextCompat.getDrawable(context, R.drawable.frameview_bkgrnd_circle));
         else
-            this.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.frameview_bkgrnd_circle));
+            this.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.frameview_bkgrnd_circle));*/
+        switch (shape){
+            case 1/*square*/:
+                this.setBackground(ContextCompat.getDrawable(context, R.drawable.frameview_bkgrnd_circle));
+                break;
+            case 2/*triangle*/:
+                this.setBackground(ContextCompat.getDrawable(context, R.drawable.frameview_bkgrnd_circle));
+                break;
+            default/*circle*/:
+                this.setBackground(ContextCompat.getDrawable(context, R.drawable.frameview_bkgrnd_circle));
+                break;
+        }
+
     }
 }
