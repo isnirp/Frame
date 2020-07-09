@@ -43,10 +43,13 @@ public class FrameImageView extends RelativeLayout {
         inflate(context, R.layout.frame_image_view_layout, this);
         imageView = findViewById(R.id.img_src);
 
+        // defaults
+        int bkgrdColor = ContextCompat.getColor(context, R.color.defaultBkgrnd);
+
         // Obtain a typed array of attributes
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.FrameImageView, 0, 0);
         viewShape = a.getInteger(R.styleable.FrameImageView_frameView_shape, 0);
-        backgroundColor = a.getColor(R.styleable.FrameImageView_frameView_backgroundColor, Color.BLACK);
+        backgroundColor = a.getColor(R.styleable.FrameImageView_frameView_backgroundColor, bkgrdColor);
         strokeColor = a.getColor(R.styleable.FrameImageView_frameView_strokeColor, Color.BLACK);
         imageSrc = a.getDrawable(R.styleable.FrameImageView_frameView_src);
 
