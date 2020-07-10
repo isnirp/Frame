@@ -91,10 +91,8 @@ public class FrameImageView extends RelativeLayout {
         shapeDrawable = new GradientDrawable();
         switch (shape) {
             case 1/*square*/:
-                this.setBackground(ContextCompat.getDrawable(context, R.drawable.frameview_bkgrnd_circle));
-                break;
-            case 2/*triangle*/:
-                shapeCircle(shapeDrawable);
+                shapeSquare(shapeDrawable);
+//                this.setBackground(ContextCompat.getDrawable(context, R.drawable.frameview_bkgrnd_circle));
                 break;
             default/*circle*/:
                 shapeCircle(shapeDrawable);
@@ -114,6 +112,11 @@ public class FrameImageView extends RelativeLayout {
 
     private void shapeCircle(GradientDrawable gd) {
         gd.setShape(GradientDrawable.OVAL);
+        this.setBackground(gd);
+    }
+
+    private void shapeSquare(GradientDrawable gd) {
+        gd.setShape(GradientDrawable.RECTANGLE);
         this.setBackground(gd);
     }
 }

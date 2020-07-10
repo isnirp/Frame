@@ -12,8 +12,9 @@
         android:layout_height="75dp"
         android:layout_centerInParent="true"
         app:frameView_src="@drawable/ic_action_adb"
-        app:frameView_shape="circle"
+        app:frameView_shape="square"
         app:frameView_backgroundColor="#dd0ef9"
-        app:frameView_strokeColor="#ff3300"/>
+        app:frameView_strokeColor="#ff3300"
+        app:frameView_strokeSize="10"/>
 
 </RelativeLayout>
