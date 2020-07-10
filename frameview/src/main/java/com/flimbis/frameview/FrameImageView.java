@@ -66,7 +66,7 @@ public class FrameImageView extends RelativeLayout {
         // background or solid
         setBackgroundColor(backgroundColor);
         // stroke color
-        setStrokeColor(strokeColor);
+        setStroke(strokeSize, strokeColor);
         // default padding
         this.setPadding(10, 15, 10, 15);
 
@@ -108,8 +108,8 @@ public class FrameImageView extends RelativeLayout {
         shapeDrawable.setColor(color);
     }
 
-    public void setStrokeColor(int color){
-        shapeDrawable.setStroke(1, color);
+    public void setStroke(int size, int color) {
+        shapeDrawable.setStroke(size, color);
     }
 
     private void shapeCircle(GradientDrawable gd) {
